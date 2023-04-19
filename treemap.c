@@ -38,7 +38,7 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lt) (void* key1, void* key2)) {
   TreeMap * map = (TreeMap *) malloc(sizeof(TreeMap));
-  map->size = 0;
+  //map->size = 0;
   map->root = NULL;
   map->lower_than = lt;
   return map;
