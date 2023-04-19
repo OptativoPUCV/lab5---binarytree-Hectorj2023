@@ -16,3 +16,13 @@ treemap.c:43:21: error: ‘lt’ undeclared (first use in this function)
 treemap.c:43:21: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 4f88050
+Wed 19 Apr 2023 10:12:14 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:6: error: ‘TreeMap’ has no member named ‘size’
+   41 |   map->size = 0;
+      |      ^~
+Compilation failed
+9d6f2fa
