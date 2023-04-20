@@ -569,3 +569,18 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 311366b
+Thu 20 Apr 2023 07:35:38 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:122:9: error: ‘current’ undeclared (first use in this function)
+  122 |     if (current->right != NULL) {
+      |         ^~~~~~~
+treemap.c:122:9: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:157:1: error: control reaches end of non-void function [-Werror=return-type]
+  157 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+223b442
