@@ -46,31 +46,51 @@ TreeMap * createTreeMap(int (*lt) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
-  tree->current = tree->root;
-  TreeNode*new = createTreeNode(key, value);
-  
-  if(tree->root == NULL){
-    tree->root = new;
-    return;
-  }
-  if(searchTreeMap(tree, key) != NULL) return;
-  while(tree->current != NULL)
-  {
-  if (tree -> lower_than(tree->current->pair->key, key))
-  {
-    if(tree->current->right==NULL){
-      tree->current->right = new;
-      new->parent=tree->current->right;
-      return;
+     if (tree == NULL || key == NULL) {
+        return;
     }
-        tree->current = tree->current->right;
-  }
-      else{
-        tree->current = tree->current->left;
-      }
-      
+
+    // Si la clave ya existe, retornamos sin hacer nada.
+    if (searchTreeMap(tree, key) != NULL) {
+        return;
     }
-return NULL;
+
+    // Creamos un nuevo nodo con el par (key, value).
+    TreeNode* new_node = createTreeNode(key, value);
+
+    // Si el árbol está vacío, hacemos que el nuevo nodo sea la raíz.
+    if (tree->root == NULL) {
+        tree->root = new_node;
+        tree->current = new_node;
+        tree->size++;
+        return;
+    }
+
+    // Buscamos la posición donde deberíamos insertar el nuevo nodo.
+    tree->current = tree->root;
+    while (tree->current != NULL) {
+        if (tree->compare_keys(key, tree->current->key) < 0) {
+            if (tree->current->left == NULL) {
+                tree->current->left = new_node;
+                new_node->parent = tree->current;
+                tree->current = new_node;
+                tree->size++;
+                return;
+            } else {
+                tree->current = tree->current->left;
+            }
+        } else {
+            if (tree->current->right == NULL) {
+                tree->current->right = new_node;
+                new_node->parent = tree->current;
+                tree->current = new_node;
+                tree->size++;
+                return;
+            } else {
+                tree->current = tree->current->right;
+            }
+        }
+    }
 }
 
 TreeNode * minimum(TreeNode * x){
