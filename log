@@ -846,3 +846,51 @@ treemap.c:117:30: error: ‘TreeNode’ has no member named ‘balance’
       |                              ^~
 Compilation failed
 82d591f
+Thu 20 Apr 2023 11:55:12 PM UTC: 
+ treemap.c | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:9: error: ‘TreeNode’ has no member named ‘key’
+  115 |     node->key = successor->key;
+      |         ^~
+treemap.c:115:26: error: ‘TreeNode’ has no member named ‘key’
+  115 |     node->key = successor->key;
+      |                          ^~
+treemap.c:116:9: error: ‘TreeNode’ has no member named ‘value’
+  116 |     node->value = successor->value;
+      |         ^~
+treemap.c:116:28: error: ‘TreeNode’ has no member named ‘value’
+  116 |     node->value = successor->value;
+      |                            ^~
+treemap.c:117:9: error: ‘TreeNode’ has no member named ‘balance’
+  117 |     node->balance = successor->balance;
+      |         ^~
+treemap.c:117:30: error: ‘TreeNode’ has no member named ‘balance’
+  117 |     node->balance = successor->balance;
+      |                              ^~
+treemap.c: In function ‘upperBound’:
+treemap.c:167:17: error: ‘TreeMap’ has no member named ‘compare’
+  167 |         if (tree->compare(key, current->key) < 0) {
+      |                 ^~
+treemap.c:167:39: error: ‘TreeNode’ has no member named ‘key’
+  167 |         if (tree->compare(key, current->key) < 0) {
+      |                                       ^~
+treemap.c:171:22: error: ‘TreeMap’ has no member named ‘compare’
+  171 |         else if (tree->compare(key, current->key) > 0) {
+      |                      ^~
+treemap.c:171:44: error: ‘TreeNode’ has no member named ‘key’
+  171 |         else if (tree->compare(key, current->key) > 0) {
+      |                                            ^~
+treemap.c:175:28: error: ‘TreeNode’ has no member named ‘data’
+  175 |             return &current->data;
+      |                            ^~
+treemap.c:181:24: error: ‘TreeNode’ has no member named ‘data’
+  181 |         return &ub_node->data;
+      |                        ^~
+treemap.c:186:1: error: control reaches end of non-void function [-Werror=return-type]
+  186 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+a4c10b2
