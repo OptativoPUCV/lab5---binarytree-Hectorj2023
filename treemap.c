@@ -45,47 +45,6 @@ TreeMap * createTreeMap(int (*lt) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-
-     if (tree == NULL || key == NULL) {
-        return;
-    }
-
-    if (searchTreeMap(tree, key) != NULL) {
-        return;
-    }
-
-    TreeNode* new_node = createTreeNode(key, value);
-
-
-    if (tree->root == NULL) {
-        tree->root = new_node;
-        tree->current = new_node;
-        return;
-    }
-
-
-    tree->current = tree->root;
-    while (tree->current != NULL) {
-        if (tree->lower_than(key, tree->current->key) < 0) {
-            if (tree->current->left == NULL) {
-                tree->current->left = new_node;
-                new_node->parent = tree->current;
-                tree->current = new_node;
-                return;
-            } else {
-                tree->current = tree->current->left;
-            }
-        } else {
-            if (tree->current->right == NULL) {
-                tree->current->right = new_node;
-                new_node->parent = tree->current;
-                tree->current = new_node;
-                return;
-            } else {
-                tree->current = tree->current->right;
-            }
-        }
-    }
 }
 
 TreeNode * minimum(TreeNode * x){
@@ -143,9 +102,56 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    if (tree == NULL || tree->root == NULL) {
+        return NULL;
+    }
+
+    TreeNode * current = tree->root;
+    while (current->left != NULL) {
+        current = current->left;
+    }
+
+    return current->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+        if (tree == NULL || current == NULL) {
+        return NULL;
+    }
+
+    if (current->right != NULL) {
+     
+        current = current->right;
+        while (current->left != NULL) {
+            current = current->left;
+        }
+        return current->pair;
+    } else {
+   
+        TreeNode * parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        return (parent == NULL) ? NULL : parent->pair;
+    }    if (tree == NULL || current == NULL) {
+        return NULL;
+    }
+
+    if (current->right != NULL) {
+    
+        current = current->right;
+        while (current->left != NULL) {
+            current = current->left;
+        }
+        return current->pair;
+    } else {
+    
+        TreeNode * parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        return (parent == NULL) ? NULL : parent->pair;
+    }
 }
