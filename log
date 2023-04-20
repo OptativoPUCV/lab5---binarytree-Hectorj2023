@@ -73,3 +73,27 @@ treemap.c:87:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 1600c04
+Thu 20 Apr 2023 02:59:09 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:78:29: error: ‘TreeMap’ has no member named ‘compareKeys’
+   78 |         int cmpResult = tree->compareKeys(key, currentNode->key);
+      |                             ^~
+treemap.c:78:59: error: ‘TreeNode’ has no member named ‘key’
+   78 |         int cmpResult = tree->compareKeys(key, currentNode->key);
+      |                                                           ^~
+treemap.c:84:21: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   84 |         currentNode = (cmpResult < 0) : currentNode->left : currentNode->right;
+      |                     ^
+treemap.c:84:38: error: expected ‘;’ before ‘:’ token
+   84 |         currentNode = (cmpResult < 0) : currentNode->left : currentNode->right;
+      |                                      ^~
+      |                                      ;
+treemap.c:87:1: error: control reaches end of non-void function [-Werror=return-type]
+   87 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+17f864e

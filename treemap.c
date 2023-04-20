@@ -81,7 +81,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current = currentNode;
             return currentNode->pair;
         }
-        currentNode = (cmpResult < 0)  currentNode->left : currentNode->right;
+        currentNode = (cmpResult < 0) : currentNode->left : currentNode->right;
     }
   
 }
