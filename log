@@ -161,3 +161,20 @@ treemap.c:108:29: error: ‘TreeMap’ has no member named ‘cmp’
       |                             ^~
 Compilation failed
 7a1953b
+Thu 20 Apr 2023 03:12:45 PM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c:14:3: error: expected specifier-qualifier-list before ‘tree’
+   14 |   tree->compareKeys = &compareIntKeys;
+      |   ^~~~
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:59:25: error: ‘TreeMap’ has no member named ‘compareKeys’
+   59 |         cmpResult = tree->compareKeys(key, currentNode->pair->key);
+      |                         ^~
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:109:29: error: ‘TreeMap’ has no member named ‘cmp’
+  109 |         int cmpResult = tree->cmp(key, currentNode->pair->key);
+      |                             ^~
+Compilation failed
+4bd3ecd

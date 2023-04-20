@@ -11,6 +11,7 @@ struct TreeNode {
     TreeNode * left;
     TreeNode * right;
     TreeNode * parent;
+  tree->compareKeys = &compareIntKeys;
 };
 
 struct TreeMap {
