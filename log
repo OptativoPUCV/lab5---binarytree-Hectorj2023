@@ -796,3 +796,9 @@ treemap.c:116:28: error: ‘TreeNode’ has no member named ‘count’
       |                            ^~
 Compilation failed
 e24416c
+Thu 20 Apr 2023 11:35:04 PM UTC: 
+ treemap.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+ tests:  19|3
+total_score: 40/70
+074e8f4
