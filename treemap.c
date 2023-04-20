@@ -46,30 +46,6 @@ TreeMap * createTreeMap(int (*lt) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  TreeNode *parent = NULL;
-    TreeNode *currentNode = tree->root;
-    int cmpResult = 0;
-    while (currentNode != NULL) {
-        cmpResult = tree->lower_than(key, currentNode->pair->key);
-        if (cmpResult == 0) {
-            return;
-        } else {
-            parent = currentNode;
-            currentNode = (cmpResult < 0) ? currentNode->left : currentNode->right;
-        }
-    }
-
-    TreeNode *newNode = createTreeNode(key, value);
-    if (parent == NULL) {
-        tree->root = newNode;
-    } else {
-        if (cmpResult < 0) {
-            parent->left = newNode;
-        } else {
-            parent->right = newNode;
-        }
-    }
-    tree->current = newNode;
 
 }
 
@@ -83,38 +59,6 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-        if (node == NULL) return;
-
-
-    if (node->left == NULL && node->right == NULL) {
-        if (node == tree->root) {
-            tree->root = NULL;
-        } else if (node == node->parent->left) {
-            node->parent->left = NULL;
-        } else {
-            node->parent->right = NULL;
-        }
-        free(node);
-    }
-
-    else if (node->left == NULL || node->right == NULL) {
-        TreeNode* child = (node->left != NULL) ? node->left : node->right;
-        child->parent = node->parent;
-        if (node == tree->root) {
-            tree->root = child;
-        } else if (node == node->parent->left) {
-            node->parent->left = child;
-        } else {
-            node->parent->right = child;
-        }
-        free(node);
-    }
-
-    else {
-        TreeNode* successor = minimum(node->right);
-        node->pair = successor->pair;
-        removeNode(tree, successor);
-    }
 }
 
 
@@ -132,17 +76,6 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
 
-    TreeNode *currentNode = tree->root;
-    
-    while (currentNode != NULL) {
-        int cmpResult = tree->lower_than(key, currentNode->pair->key);
-        if (cmpResult == 0) {
-            tree->current = currentNode;
-            return currentNode->pair;
-        }
-        currentNode = (cmpResult < 0) ? currentNode->left : currentNode->right;
-    }
-    
 
     return NULL;
   
