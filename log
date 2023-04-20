@@ -620,3 +620,45 @@ Thu 20 Apr 2023 07:38:07 PM UTC:
  tests:  15|4
 total_score: 20/70
 1ed6ba6
+Thu 20 Apr 2023 10:21:44 PM UTC: 
+ treemap.c | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:60:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   60 |           tree->cuerrent->right = createTreeNode( key, value );
+      |                 ^~~~~~~~
+      |                 current
+treemap.c:61:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   61 |           tree->cuerrent->right->parent =tree->current;
+      |                 ^~~~~~~~
+      |                 current
+treemap.c:65:31: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   65 |         tree->current = tree->cuerrent->right;
+      |                               ^~~~~~~~
+      |                               current
+treemap.c:69:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   69 |           tree->cuerrent->left = createTreeNode( key, value );
+      |                 ^~~~~~~~
+      |                 current
+treemap.c:70:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   70 |           tree->cuerrent->left->parent =tree->current;
+      |                 ^~~~~~~~
+      |                 current
+treemap.c:75:31: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   75 |         tree->current = tree->cuerrent->left;
+      |                               ^~~~~~~~
+      |                               current
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+709f34b
