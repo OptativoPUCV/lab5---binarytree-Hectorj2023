@@ -692,3 +692,29 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 d3f1407
+Thu 20 Apr 2023 10:22:21 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:69:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   69 |           tree->cuerrent->left = createTreeNode( key, value );
+      |                 ^~~~~~~~
+      |                 current
+treemap.c:70:17: error: ‘TreeMap’ has no member named ‘cuerrent’; did you mean ‘current’?
+   70 |           tree->cuerrent->left->parent =tree->current;
+      |                 ^~~~~~~~
+      |                 current
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d40b807
