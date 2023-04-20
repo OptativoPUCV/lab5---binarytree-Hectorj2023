@@ -335,3 +335,17 @@ treemap.c:47:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 ea86f46
+Thu 20 Apr 2023 05:34:09 PM UTC: 
+ treemap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:73:8: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   73 | return NULL;
+      |        ^~~~
+treemap.c:47:6: note: declared here
+   47 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c0971d1
