@@ -25,6 +25,11 @@ int is_equal(TreeMap* tree, void* key1, void* key2){
     else return 0;
 }
 
+int compareIntKeys(void *key1, void *key2) {
+    int intKey1 = *((int*) key1);
+    int intKey2 = *((int*) key2);
+    return intKey1 - intKey2;
+}
 
 TreeNode * createTreeNode(void* key, void * value) {
     TreeNode * new = (TreeNode *)malloc(sizeof(TreeNode));
