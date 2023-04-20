@@ -188,3 +188,9 @@ treemap.c:103:29: error: ‘TreeMap’ has no member named ‘cmp’
       |                             ^~
 Compilation failed
 ae03026
+Thu 20 Apr 2023 03:14:25 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|7
+total_score: 5/70
+d80d949

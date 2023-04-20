@@ -100,7 +100,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode *currentNode = tree->root;
     
     while (currentNode != NULL) {
-        int cmpResult = tree->cmp(key, currentNode->pair->key);
+        int cmpResult = tree->lower_than(key, currentNode->pair->key);
         if (cmpResult == 0) {
             tree->current = currentNode;
             return currentNode->pair;
