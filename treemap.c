@@ -63,18 +63,15 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       new->parent=tree->current->right;
       return;
     }
+     else{
+        tree->current = tree->current->right;
   }
       else{
         tree->current = tree->current->left;
       }
       
     }
-  
-
 return NULL;
-  
-
-  
 }
 
 TreeNode * minimum(TreeNode * x){
