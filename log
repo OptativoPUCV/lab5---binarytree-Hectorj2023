@@ -777,3 +777,22 @@ treemap.c:116:32: error: ‘TreeNode’ has no member named ‘value’
       |                                ^~
 Compilation failed
 79e92dd
+Thu 20 Apr 2023 11:33:41 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:9: error: ‘TreeNode’ has no member named ‘data’
+  115 |     node->data = successor->data;
+      |         ^~
+treemap.c:115:27: error: ‘TreeNode’ has no member named ‘data’
+  115 |     node->data = successor->data;
+      |                           ^~
+treemap.c:116:9: error: ‘TreeNode’ has no member named ‘count’
+  116 |     node->count = successor->count;
+      |         ^~
+treemap.c:116:28: error: ‘TreeNode’ has no member named ‘count’
+  116 |     node->count = successor->count;
+      |                            ^~
+Compilation failed
+e24416c
