@@ -11,6 +11,7 @@ struct TreeNode {
     TreeNode * left;
     TreeNode * right;
     TreeNode * parent;
+    TreeNode * key;
 };
 
 struct TreeMap {
