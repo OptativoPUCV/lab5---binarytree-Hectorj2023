@@ -119,14 +119,14 @@ Pair * nextTreeMap(TreeMap * tree) {
         return NULL;
     }
 
-    if (current->right != NULL) {
+    //if (current->right != NULL) {
      
         current = current->right;
         while (current->left != NULL) {
             current = current->left;
         }
         return current->pair;
-    } else {
+     else {
    
         TreeNode * parent = current->parent;
         while (parent != NULL && current == parent->right) {
