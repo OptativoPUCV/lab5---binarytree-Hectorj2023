@@ -11,7 +11,6 @@ struct TreeNode {
     TreeNode * left;
     TreeNode * right;
     TreeNode * parent;
-  tree->compareKeys = &compareIntKeys;
 };
 
 struct TreeMap {
@@ -26,11 +25,6 @@ int is_equal(TreeMap* tree, void* key1, void* key2){
     else return 0;
 }
 
-int compareIntKeys(void *key1, void *key2) {
-    int intKey1 = *((int*) key1);
-    int intKey2 = *((int*) key2);
-    return intKey1 - intKey2;
-}
 
 TreeNode * createTreeNode(void* key, void * value) {
     TreeNode * new = (TreeNode *)malloc(sizeof(TreeNode));
@@ -56,7 +50,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode *currentNode = tree->root;
     int cmpResult = 0;
     while (currentNode != NULL) {
-        cmpResult = tree->compareKeys(key, currentNode->pair->key);
+        cmpResult = tree->lower_than(key, currentNode->pair->key);
         if (cmpResult == 0) {
             return;
         } else {
