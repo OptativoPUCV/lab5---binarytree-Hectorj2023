@@ -176,7 +176,7 @@ TreeNode* current = tree->root;
     }
 
     if (ub_node != NULL) {
-        return &ub_node->pair;
+        return ub_node->pair;
     }
     else {
         return NULL;
