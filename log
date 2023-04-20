@@ -270,3 +270,23 @@ treemap.c:47:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 831848f
+Thu 20 Apr 2023 05:30:26 PM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:59:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   59 |     if(tree->current->right==NULL);{
+      |     ^~
+treemap.c:59:36: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   59 |     if(tree->current->right==NULL);{
+      |                                    ^
+treemap.c:72:8: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   72 | return NULL;
+      |        ^~~~
+treemap.c:47:6: note: declared here
+   47 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+96d3e19
