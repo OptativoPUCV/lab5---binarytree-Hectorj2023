@@ -50,15 +50,13 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         return;
     }
 
-    // Si la clave ya existe, retornamos sin hacer nada.
     if (searchTreeMap(tree, key) != NULL) {
         return;
     }
 
-    // Creamos un nuevo nodo con el par (key, value).
     TreeNode* new_node = createTreeNode(key, value);
 
-    // Si el árbol está vacío, hacemos que el nuevo nodo sea la raíz.
+
     if (tree->root == NULL) {
         tree->root = new_node;
         tree->current = new_node;
@@ -66,7 +64,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         return;
     }
 
-    // Buscamos la posición donde deberíamos insertar el nuevo nodo.
+
     tree->current = tree->root;
     while (tree->current != NULL) {
         if (tree->compare_keys(key, tree->current->key) < 0) {

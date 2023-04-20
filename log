@@ -371,3 +371,25 @@ treemap.c:87:21: error: ‘TreeMap’ has no member named ‘size’
       |                     ^~
 Compilation failed
 c12d9a0
+Thu 20 Apr 2023 07:24:42 PM UTC: 
+ treemap.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:63:13: error: ‘TreeMap’ has no member named ‘size’
+   63 |         tree->size++;
+      |             ^~
+treemap.c:70:17: error: ‘TreeMap’ has no member named ‘compare_keys’
+   70 |         if (tree->compare_keys(key, tree->current->key) < 0) {
+      |                 ^~
+treemap.c:70:50: error: ‘TreeNode’ has no member named ‘key’
+   70 |         if (tree->compare_keys(key, tree->current->key) < 0) {
+      |                                                  ^~
+treemap.c:75:21: error: ‘TreeMap’ has no member named ‘size’
+   75 |                 tree->size++;
+      |                     ^~
+treemap.c:85:21: error: ‘TreeMap’ has no member named ‘size’
+   85 |                 tree->size++;
+      |                     ^~
+Compilation failed
+2d3d9f0
