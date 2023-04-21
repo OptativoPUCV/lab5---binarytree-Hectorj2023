@@ -159,15 +159,15 @@ return NULL;
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-TreeNode* current = tree->root;
+    TreeNode* current = tree->root;
     TreeNode* ub_node = NULL;
 
     while (current != NULL) {
-        if (tree->lower_than(key, tree->current->pair->key) < 0) {
+        if (tree->lower_than(key, current->pair->key) < 0) {
             ub_node = current;
             current = current->left;
         }
-        else if (tree->lower_than(key, tree->current->pair->key) > 0) {
+        else if (tree->lower_than(key, current->pair->key) > 0) {
             current = current->right;
         }
         else {
