@@ -1462,3 +1462,9 @@ treemap.c:116:9: error: ‘TreeMap’ has no member named ‘pair’
       |         ^~
 Compilation failed
 882b354
+Sat 22 Apr 2023 06:34:24 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  29|0
+total_score: 70/70
+f54647f
