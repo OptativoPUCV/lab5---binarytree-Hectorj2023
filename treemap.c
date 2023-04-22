@@ -158,25 +158,22 @@ return NULL;
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    Node * current = tree->root;
-    Node * ub_node = NULL;
-
-    while(current != NULL){
-        if(tree->lower_than(current->key, key)){
-            current = current->right;
+    tree->current = tree->root;
+    Pair * result = NULL;
+    while (tree->current != NULL) {
+        if (tree->lower_than(key, tree->current->pair->key) && (result == NULL || tree->lower_than(tree->current->pair->key, result->key))) {
+            result = tree->current->pair;
         }
-        else{
-            ub_node = current;
-            current = current->left;
+        if (is_equal(tree, tree->current->pair->key, key)) {
+            return tree->current->pair;
+        }
+        if (tree->lower_than(key, tree->current->pair->key)) {
+            tree->current = tree->current->left;
+        } else {
+            tree->current = tree->current->right;
         }
     }
-
-    if(ub_node == NULL){
-        return NULL;
-    }
-    else{
-        return createPair(ub_node->key, ub_node->value);
-    }
+    return result;
 }
 
 
@@ -194,33 +191,8 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if (tree->root == NULL) {
+
         return NULL; 
-    }
 
-    TreeNode *current = tree->root;
-
-    if (current->right != NULL) {
-        current = current->right;
-        while (current->left != NULL) {
-            current = current->left;
-        }
-        return current->pair;
-    } else {
-        TreeNode *parent = current->parent;
-        while (parent != NULL && current == parent->right) {
-            current = parent;
-            parent = parent->parent;
-        }
-        if (parent != NULL) {
-            current = parent;
-            while (current->left != NULL) {
-                current = current->left;
-            }
-            return current->pair;
-        } else {
-            return NULL; 
-        }
-    }
 
 }
