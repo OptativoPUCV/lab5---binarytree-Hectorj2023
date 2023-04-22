@@ -8,8 +8,6 @@ typedef struct TreeNode TreeNode;
 
 struct TreeNode {
     Pair* pair;
-    void* key;
-    void* value;
     TreeNode * left;
     TreeNode * right;
     TreeNode * parent;
@@ -88,36 +86,7 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-    if (node->left == NULL && node->right == NULL) {
-        if (node->parent == NULL) {
-            tree->root = NULL;
-        } else if (node == node->parent->left) {
-            node->parent->left = NULL;
-        } else {
-            node->parent->right = NULL;
-        }
-        free(node);
-    }
-
-    else if (node->left == NULL || node->right == NULL) {
-        TreeNode* unico= node->left != NULL ? node->left : node->right;
-        unico->parent = node->parent;
-        if (node->parent == NULL) {
-            tree->root = unico;
-        } else if (node == node->parent->left) {
-            node->parent->left = unico;
-        } else {
-            node->parent->right = unico;
-        }
-        free(node);
-    }
-
-    else { 
-    TreeNode* min_node = minimum(node->right); 
-    node->key = min_node->key; 
-    node->value = min_node->value;
-    removeNode(tree, min_node); 
-   }
+return NULL;
 
 }
 
@@ -154,7 +123,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     }
   
 
-return NULL;
+  return NULL;
   
 }
 
