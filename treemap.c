@@ -110,12 +110,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         free(node);
     }
 
-    else {
-    TreeNode* parent = minimum(node->right);
-    node->key = parent->key;
-    node->value = parent->value;
-    node->balance = parent->balance;
-    removeNode(tree, parent);
+      else { 
+        TreeNode* min_node = minimum(node->right); 
+        node->key = min_node->key; 
+        node->value = min_node->value;
+        removeNode(tree, min_node); 
    }
 
 }

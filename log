@@ -1120,3 +1120,22 @@ treemap.c:117:27: error: ‘TreeNode’ has no member named ‘balance’
       |                           ^~
 Compilation failed
 6ecbea6
+Sat 22 Apr 2023 03:38:56 PM UTC: 
+ treemap.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:13: error: ‘TreeNode’ has no member named ‘key’
+  115 |         node->key = min_node->key;
+      |             ^~
+treemap.c:115:29: error: ‘TreeNode’ has no member named ‘key’
+  115 |         node->key = min_node->key;
+      |                             ^~
+treemap.c:116:13: error: ‘TreeNode’ has no member named ‘value’
+  116 |         node->value = min_node->value;
+      |             ^~
+treemap.c:116:31: error: ‘TreeNode’ has no member named ‘value’
+  116 |         node->value = min_node->value;
+      |                               ^~
+Compilation failed
+42aa78c
