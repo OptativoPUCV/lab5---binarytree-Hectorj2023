@@ -1436,3 +1436,16 @@ treemap.c:88:27: note: expected ‘TreeMap *’ but argument is of type ‘TreeN
 cc1: all warnings being treated as errors
 Compilation failed
 7d36b1b
+Sat 22 Apr 2023 06:33:10 PM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:9: error: ‘TreeMap’ has no member named ‘key’
+  115 |     tree->key = min_node->pair->key;
+      |         ^~
+treemap.c:116:9: error: ‘TreeMap’ has no member named ‘value’
+  116 |     tree->value = min_node->pair->value;
+      |         ^~
+Compilation failed
+c5d3b98
