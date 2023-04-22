@@ -1250,3 +1250,22 @@ Sat 22 Apr 2023 06:20:39 PM UTC:
  tests:  28|1
 total_score: 65/70
 8157382
+Sat 22 Apr 2023 06:22:20 PM UTC: 
+ treemap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:9: error: ‘TreeNode’ has no member named ‘key’
+  115 |     node->key = min_node->key;
+      |         ^~
+treemap.c:115:25: error: ‘TreeNode’ has no member named ‘key’
+  115 |     node->key = min_node->key;
+      |                         ^~
+treemap.c:116:9: error: ‘TreeNode’ has no member named ‘value’
+  116 |     node->value = min_node->value;
+      |         ^~
+treemap.c:116:27: error: ‘TreeNode’ has no member named ‘value’
+  116 |     node->value = min_node->value;
+      |                           ^~
+Compilation failed
+69ccb3d
