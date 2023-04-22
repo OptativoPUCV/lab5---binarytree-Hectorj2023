@@ -1410,3 +1410,29 @@ treemap.c:116:9: error: ‘TreeNode’ has no member named ‘value’
       |         ^~
 Compilation failed
 e3185e0
+Sat 22 Apr 2023 06:32:53 PM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:9: error: ‘TreeNode’ has no member named ‘key’
+  115 |     node->key = tree->pair->key;
+      |         ^~
+treemap.c:116:9: error: ‘TreeNode’ has no member named ‘value’
+  116 |     node->value = tree->pair->value;
+      |         ^~
+treemap.c:117:22: error: ‘min_node’ undeclared (first use in this function)
+  117 |     removeNode(tree, min_node);
+      |                      ^~~~~~~~
+treemap.c:117:22: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:117:16: error: passing argument 1 of ‘removeNode’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  117 |     removeNode(tree, min_node);
+      |                ^~~~
+      |                |
+      |                TreeNode *
+treemap.c:88:27: note: expected ‘TreeMap *’ but argument is of type ‘TreeNode *’
+   88 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |                 ~~~~~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7d36b1b
