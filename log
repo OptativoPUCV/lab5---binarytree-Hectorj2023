@@ -1145,3 +1145,41 @@ Sat 22 Apr 2023 03:39:14 PM UTC:
  tests:  19|3
 total_score: 40/70
 cad5a47
+Sat 22 Apr 2023 06:09:30 PM UTC: 
+ treemap.c | 19 ++++++++-----------
+ 1 file changed, 8 insertions(+), 11 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:161:5: error: unknown type name ‘Node’
+  161 |     Node* current = tree->root;
+      |     ^~~~
+treemap.c:161:21: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  161 |     Node* current = tree->root;
+      |                     ^~~~
+treemap.c:162:5: error: unknown type name ‘Node’
+  162 |     Node* ub_node = NULL;
+      |     ^~~~
+treemap.c:165:36: error: request for member ‘key’ in something not a structure or union
+  165 |         if(tree->lower_than(current->key, key)){
+      |                                    ^~
+treemap.c:166:30: error: request for member ‘right’ in something not a structure or union
+  166 |             current = current->right;
+      |                              ^~
+treemap.c:170:30: error: request for member ‘left’ in something not a structure or union
+  170 |             current = current->left;
+      |                              ^~
+treemap.c:178:16: error: implicit declaration of function ‘createPair’ [-Werror=implicit-function-declaration]
+  178 |         return createPair(ub_node->key, ub_node->value);
+      |                ^~~~~~~~~~
+treemap.c:178:34: error: request for member ‘key’ in something not a structure or union
+  178 |         return createPair(ub_node->key, ub_node->value);
+      |                                  ^~
+treemap.c:178:48: error: request for member ‘value’ in something not a structure or union
+  178 |         return createPair(ub_node->key, ub_node->value);
+      |                                                ^~
+treemap.c:180:1: error: control reaches end of non-void function [-Werror=return-type]
+  180 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+b9b6724
